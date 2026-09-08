@@ -1,0 +1,4 @@
+approach,pr_auc_val
+class_weight='balanced' (LightGBM),0.12585976339286487
+SMOTE inside training fold only (correct),0.1257577829427659
+SMOTE fit before split -- LEAKED,0.2981583377494774

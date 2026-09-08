@@ -1,0 +1,17 @@
+# Requirements for "The Cost of Being Wrong" — Assignment 2
+# DSA 8401 Applied Machine Learning in Data Science, 2026
+# Valerie Jerono (222331)
+#
+# Install with:   pip install -r requirements.txt
+# Python version: 3.10+  (tested on 3.10, 3.11)
+#
+# Versions pinned to exact environment used to produce the committed results.
+
+scikit-learn==1.5.2
+imbalanced-learn==0.13.0
+lightgbm==4.6.0
+optuna==4.7.0
+shap==0.50.0
+matplotlib==3.10.3
+pandas==2.3.0
+numpy==2.1.3

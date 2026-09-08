@@ -1,0 +1,80 @@
+{
+  "dataset": {
+    "n_total": 183600,
+    "base_rate": 0.084036,
+    "n_fraud": 15429
+  },
+  "split": {
+    "n_train": 110160,
+    "n_val": 34884,
+    "n_test": 31212,
+    "gap_rows": 3672
+  },
+  "model_ladder": [
+    {
+      "model": "Logistic Regression (balanced)",
+      "pr_auc": 0.13130582189029538,
+      "roc_auc": 0.6243196164397904
+    },
+    {
+      "model": "Random Forest",
+      "pr_auc": 0.1318036833991132,
+      "roc_auc": 0.6232317033463833
+    },
+    {
+      "model": "LightGBM (default)",
+      "pr_auc": 0.12585976339286487,
+      "roc_auc": 0.6052681253356582
+    },
+    {
+      "model": "LightGBM (Optuna-tuned)",
+      "pr_auc": 0.14277227284831212,
+      "roc_auc": 0.6358734552927494
+    }
+  ],
+  "imbalance": {
+    "class_weight_pr_auc": 0.12586,
+    "smote_correct_pr_auc": 0.125758,
+    "smote_leaked_pr_auc": 0.298158
+  },
+  "optuna": {
+    "n_trials": 60,
+    "best_pr_auc_val": 0.138284,
+    "best_params": {
+      "n_estimators": 113,
+      "num_leaves": 16,
+      "learning_rate": 0.04741384322802449,
+      "min_child_samples": 66,
+      "subsample": 0.7607939089646245,
+      "colsample_bytree": 0.6096584898995372,
+      "reg_alpha": 2.693157731822337e-07,
+      "reg_lambda": 0.014496646634441671
+    }
+  },
+  "test_performance": {
+    "pr_auc": 0.142772,
+    "roc_auc": 0.635873
+  },
+  "calibration": {
+    "brier_raw": 0.232899,
+    "brier_calibrated": 0.076083
+  },
+  "threshold": {
+    "pre_calibration": {
+      "optimal_t": 0.49,
+      "cost_at_optimal": 19158800,
+      "cost_at_0_5": 19273200,
+      "savings_per_1000": 3665.3
+    },
+    "post_calibration": {
+      "optimal_t": 0.08,
+      "cost_at_optimal": 19124800,
+      "cost_at_0_5": 26423200,
+      "savings_per_1000": 233833.1
+    }
+  },
+  "cost_parameters": {
+    "COST_FN_KES": 10000,
+    "COST_FP_KES": 800
+  }
+}
